@@ -1,0 +1,46 @@
+body{
+    background-color: #white;
+}
+a {
+    color: white;
+    text-shadow: black 1px 1px 1px;
+
+}
+a:link {
+ text-decoration:none;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #d2f6fc;
+  text-shadow: black 1px 1px 1px;
+}
+li {
+    color: white;
+    text-shadow: black 1px 1px 1px;
+}
+
+#navtext {
+    color : white;
+    text-shadow: black 1px 1px 1px;
+}
+
+#navtext:hover,
+#navtext:focus,
+#navtext:active {
+    color: #d2f6fc;
+    text-shadow: black 5px 5px 5px;
+}
+
+#divinfo  {
+    height: 540px;
+    margin-top: 20px;
+    background: #f0f4f7;
+    border-radius:20px;
+    color : #0085ff;
+    text-shadow: black 1px 1px 1px;
+}
+
+#info-text{
+    color: #d2f6fc
+}

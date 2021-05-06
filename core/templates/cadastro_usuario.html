@@ -1,0 +1,98 @@
+{% extends 'utils/base.html' %}
+
+{% block title %}
+    SchoolBag
+{% endblock title %}
+    
+{% block content %}
+    <div class="container" id="divinfo">
+        <div class="cadastro-form pt-4 pb-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-outline">
+                    <label for="">Nome</label>
+                    <input type="text" name="nome_user_ah" id="" class="form-control">
+                </div>
+                <div class="form-outline">
+                    <label for="">Email</label>
+                    <input type="email" name="email_user_ah" id="" class="form-control">
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                        <div class="form-outline">
+                            <label for="">Github</label>
+                            <input type="text" name="github_user_ah" id="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                        <div class="form-outline">
+                            <label for="">Linkedin</label>
+                            <input type="text" name="linkedin_user_ah" id="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                        <div class="form-outline">
+                            <label for="">Portfólio</label>
+                            <input type="text" name="portfolio_user_ah" id="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-outline">
+                    <label for="">Descrição</label>
+                    <textarea name="descricao_user_ah" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-outline">
+                            <label for="">Username</label>
+                            <input type="text" name="username" id="" class="form-control">
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-6">
+                        <div class="form-outline">
+                            <label for="">Senha</label>
+                            <input type="password" name="password" id="" class="form-control">
+                        </div>
+                    </div>
+                    -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-outline">
+                            <label for="">Confirme sua senha</label>
+                            <input type="password" name="password" id="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!--
+        <input type="text" name="nome_user_ah" id="">
+        <input type="email" name="email_user_ah" id="">
+        <input type="text" name="github_user_ah" id="">
+        <input type="text" name="linkedin_user_ah" id="">
+        <input type="text" name="portfolio_user_ah" id="">
+        <textarea name="descricao_user_ah" id="" cols="30" rows="10"></textarea>
+        <input type="text" name="username" id="">
+        <input type="password" name="password" id="">
+        -->
+        {{form_user}}
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

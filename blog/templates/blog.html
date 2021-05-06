@@ -1,0 +1,29 @@
+{% extends 'utils/base_blog.html' %}
+
+{% block title %}
+    Blog SchoolBag
+{% endblock title %}
+    
+{% block content %}
+<div class="container" id="divinfo">
+    <h3>Ultimas postagens</h3>
+    
+    <div class="row">
+        {% for postagem in postagens %}
+            <div class="postagem col-4 border border-dark">
+                <div class="corpo-postagem">
+                    <p>{{postagem.titulo_postagem_ah}}</p>
+                    <p>{{postagem.slug_postagem_ah}}</p>
+                    <div class="corpo">
+                        {{postagem.corpo_postagem_ah|safe|linebreaks}}
+                    </div>
+                </div>
+                <a href="{% url 'visualizar_postagem' postagem.slug_postagem_ah %}" target="_blank">Continue lendo</a>
+            </div> 
+        {% endfor %}
+    </div>
+    
+        
+</div>
+{% endblock content %}
+    

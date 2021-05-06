@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    {% block title %}
+        
+    {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #divinfo  {
+            min-height: 100%;
+            height: auto;
+            margin-top: 95px;
+            margin-bottom: 50px;
+            background: #f0f4f7;
+            text-shadow: black 1px 1px 1px;
+        }
+
+        body{
+            background-color: white;
+        }
+        .navbar-nav li a {
+            color: white;
+            text-shadow: black 1px 1px 1px;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+        color: #d2f6fc;
+        text-shadow: black 1px 1px 1px;
+        }
+        li {
+            text-shadow: black 1px 1px 1px;
+        }
+
+        #navtext {
+            color : white;
+            text-shadow: black 1px 1px 1px;
+        }
+        .postagem .corpo{
+            display: -webkit-box;
+            word-break: break-all;
+            -webkit-line-clamp: 3; /** número de linhas que você quer exibir */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .corpo-postagem{
+            word-break: break-all;
+        }
+
+        .postagem{
+            height: 250px;
+            background-color: red;
+            position: relative;
+        }
+        .postagem a{
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #0085ff;" >
+        <div class="container" id="navtext" >
+            <a href="{% url 'index' %}"><h4 class="display-4" >SchoolBag</h4></a>
+            <p class="lead" >MM The Game</p>
+            <button class="navbar-toggler btn btn-danger" type="button" id="button-collapse" data-target="#collapse" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex-lg justify-content-end" id="collapse">
+                <ul class="navbar-nav" >
+                    <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+                    
+                    <div class="dropdown">
+                        <li class="nav-item" data-toggle="dropdown"><a href="#" class="dropdown-toggle nav-link">Jogos</a></li>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">Em desenvolvimento</div>
+                            <a href="" class="dropdown-item">Mathematical Master</a>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-header">Sem previsão</div>
+                            <a href="" class="dropdown-item disabled">Segundo jogo</a>
+                        </div>
+                    </div>
+                    
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item"><a href="{% url 'cadastro_usuario' %}" class="nav-link">Cadastrar membro</a></li>
+                        <li class="nav-item"><a href="{% url 'perfil' request.user.id %}" class="nav-link">Meu perfil</a></li>
+                        <li class="nav-item"><a href="{% url 'criar_postagem' %}" class="nav-link">Criar postagem</a></li>
+                        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Sair</a></li>
+                    {% else %}
+                        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Entrar</a></li>
+                    {% endif %}
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    {% block content %}
+        
+    {% endblock content %}
+        
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function(){
+            $('.navbar-nav li a').click(function(event){
+                
+                $('html, body').animate(
+                    {
+                        scrollTop:$('.'+event.target.id).offset().top - 95
+                    }
+                )
+                event.preventDefault()
+            });
+        }
+        
+    </script>
+</body>
+</html>

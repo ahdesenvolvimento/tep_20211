@@ -11,10 +11,7 @@ a:hover,
 a:focus,
 a:active {
   color: #d2f6fc;
-  text-shadow: black 1px 1px 1px;
-}
-li {
-    text-shadow: black 1px 1px 1px;
+
 }
 
 #navtext {
@@ -37,8 +34,6 @@ li {
     margin-top: 95px;
     margin-bottom: 50px;
     background: #f0f4f7;
-    border-radius:20px;
-    color : #0085ff;
     text-shadow: black 1px 1px 1px;
 }
 
@@ -71,4 +66,24 @@ li {
 
 .footer ul li{
     display: inline;
+}
+
+.login-form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+.login-form form{
+    padding: 15px;
+}
+
+.login-form button{
+    width: 100%;
+}
+
+nav a:hover{
+    background: black;
 }

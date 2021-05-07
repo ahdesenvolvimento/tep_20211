@@ -5,24 +5,28 @@
 {% endblock title %}
     
 {% block content %}
-<div class="container" id="divinfo">
-    <h3>Ultimas postagens</h3>
-    
+<div class="container-fluid" id="divinfo">
     <div class="row">
-        {% for postagem in postagens %}
-            <div class="postagem col-4 border border-dark">
-                <div class="corpo-postagem">
-                    <p>{{postagem.titulo_postagem_ah}}</p>
-                    <p>{{postagem.slug_postagem_ah}}</p>
-                    <div class="corpo">
-                        {{postagem.corpo_postagem_ah|safe|linebreaks}}
-                    </div>
-                </div>
-                <a href="{% url 'visualizar_postagem' postagem.slug_postagem_ah %}" target="_blank">Continue lendo</a>
-            </div> 
-        {% endfor %}
+        <div class="col-9">
+            <div class="row">
+                {% for postagem in postagens %}
+                    <div class="postagem col-6 border border-dark">
+                        <div class="corpo-postagem">
+                            <p class="titulo-postagem text-center pb-2 pt-2">{{postagem.titulo_postagem_ah}}</p>
+                            <div class="corpo">
+                                {{postagem.corpo_postagem_ah|safe|linebreaks}}
+                            </div>
+                        </div>
+                        <a href="{% url 'visualizar_postagem' postagem.slug_postagem_ah %}" target="_blank">Continue lendo</a>
+                    </div> 
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-3" style="position: fixed; right: 0;">
+            Section bar
+        </div>
     </div>
-    
+
         
 </div>
 {% endblock content %}

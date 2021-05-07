@@ -1,0 +1,76 @@
+body, html{
+    min-height: 100%;
+    height: auto;
+}
+#divinfo  {
+    min-height: 100vh;
+    height: auto;
+    margin-top: 95px;
+    margin-bottom: 50px;
+    background: #f0f4f7;
+    text-shadow: black 1px 1px 1px;
+    position: relative;
+}
+
+
+.navbar-nav li a , #navtext{
+    text-shadow: black 1px 1px 1px;
+}
+
+
+.postagem a:hover,
+.postagem a:focus,
+.postagem a:active {
+    color: black;
+    text-decoration: none;
+
+}
+
+#navtext, .logo, ul li a{
+    transition: all 1000ms;
+    color : white;
+}
+
+.logo:hover{
+    text-decoration: none;
+    color: black;
+    border-radius: 20%;
+    background-color: white;
+}
+
+ul li a:hover{
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+}
+.postagem .corpo{
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-line-clamp: 3; /** número de linhas que você quer exibir */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.corpo-postagem{
+    word-break: break-all;
+}
+
+.postagem{
+    height: 250px;
+    background-color: white;
+    position: relative;
+}
+.postagem a{
+    position: absolute;
+    bottom: 0;
+}
+
+.titulo-postagem{
+    background-color: #f1f1f1;
+}
+
+.info-postagem{
+    position: absolute;
+    bottom: 0;
+}

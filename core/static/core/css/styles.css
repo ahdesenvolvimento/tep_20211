@@ -1,32 +1,36 @@
+
 body{
     background-color: white;
+    background: url('/static/core/img/background.jfif');
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.navbar-nav li a {
-    color: white;
+
+.navbar-nav li a , #navtext{
     text-shadow: black 1px 1px 1px;
 }
 
 
-a:hover,
-a:focus,
-a:active {
-  color: #d2f6fc;
-
+#member{
+    visibility: hidden;
 }
 
-#navtext {
+#navtext, .logo, ul li a{
+    transition: all 1000ms;
     color : white;
-    text-shadow: black 1px 1px 1px;
 }
 
-/*
-#navtext:hover,
-#navtext:focus,
-#navtext:active {
-    color: #d2f6fc;
-    text-shadow: black 5px 5px 5px;
+.logo:hover{
+    text-decoration: none;
+    color: black;
+    border-radius: 20%;
+    background-color: white;
 }
-*/
+
+ul li a:hover{
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+}
 
 #divinfo  {
     min-height: 100%;
@@ -34,7 +38,7 @@ a:active {
     margin-top: 95px;
     margin-bottom: 50px;
     background: #f0f4f7;
-    text-shadow: black 1px 1px 1px;
+
 }
 
 .info-text{
@@ -74,6 +78,7 @@ a:active {
     top: 50%;
     width: 400px;
     transform: translateX(-50%) translateY(-50%);
+    background-color: red;
 
 }
 .login-form form{
@@ -82,8 +87,4 @@ a:active {
 
 .login-form button{
     width: 100%;
-}
-
-nav a:hover{
-    background: black;
 }

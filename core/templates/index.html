@@ -8,39 +8,49 @@
 {% block content %}
     <div class="container" id="divinfo">
         <div class = 'info' id = ''>
-            
-            <h2 id = 'info-title' class="pt-4 pb-4 text-center border-bottom border-dark"> MM The Game (Mathematical Master)</h2>
-
-            <h5>Apresentação</h5>
+            <h2 class="pt-4">Apresentação</h2>
             <p class="info-text">Somos a equipe SchoolBag, equipe formada por estudantes do Instituto Federal do Piauí
-                com o objetivo de desenvolver um jogo para a matéria
+                com o objetivo de desenvolver dois jogos para a matéria
                 Tópicos especiais em programação.
             </p>
-
-            <h5>Objetivo</h5>
-            <p class = 'info-text'>
-                O Game terá como objetivo principal ajudar crianças no aprendizado de matemática
-            básica de forma divertida e prática. Utilizando alguns conceitos de estruturas de dados
-            como pilhas, listas, filas e talvez algoritmos de ordenação, para ensinar as operações
-            básicas da matemática (adição, subtração, multiplicação e divisão), na qual cada estrutura
-            irá ensinar a matemática por meio de sua lógica. A princípio, o jogo irá trabalhar com um
-            sistema de recompensas para estimular o estudo das crianças e será feito, inicialmente, em
-            2D caso o estudo dos integrantes da equipe esteja muito avançado o 3D será considerado
-            uma opção. Com relação a jogabilidade, por se tratar de crianças que estão em fase de
-            aprendizado, o nosso jogo trabalhará com o touch e não com o mouse. O jogo irá possuir 3
-            níveis (fácil, médio e difícil), sendo o fácil operações de subtração e adição, o médio as
-            quatro operações e o difícil poderá ter dois caminhos, as quatro operações só que com
-            cálculos mais "difíceis" ou as quatro operações com adição de potenciação e raiz quadrada,
-            no entanto o grupo irá analisar a disponibilidade de implementar potenciação e raiz
-            quadrada, visto que são operações matemáticas avançadas. Essa é a ideia que temos para o primeiro jogo.
-            </p>
+            <div class="jogos border-top border-bottom border-dark">
+                
+                <a href="{% url 'blog' %}">
+                    <h4 id = '' class="pt-4 pb-2 border-dark mmthegame"> MM The Game (Mathematical Master)</h4>
+                </a>
+                <h5>Objetivo</h5>
+                <p class = 'info-text'>
+                    O Game terá como objetivo principal ajudar crianças no aprendizado de matemática
+                básica de forma divertida e prática. Utilizando alguns conceitos de estruturas de dados
+                como pilhas, listas, filas e talvez algoritmos de ordenação, para ensinar as operações
+                básicas da matemática (adição, subtração, multiplicação e divisão) bem como alguns conceitos
+                da matématica (números pares e impares e números negativos e positivos), na qual cada estrutura
+                irá ensinar a matemática por meio de sua lógica. A princípio, o jogo irá trabalhar com um
+                sistema de recompensas para estimular o estudo das crianças e será feito, inicialmente, em
+                2D caso o estudo dos integrantes da equipe esteja muito avançado o 3D será considerado
+                uma opção. Com relação a jogabilidade, por se tratar de crianças que estão em fase de
+                aprendizado, o nosso jogo trabalhará com o touch e não com o mouse. O jogo irá possuir 3
+                níveis (fácil, médio e difícil), sendo o fácil operações de subtração, adição números positivos
+                e negativos, o médio as quatro operações junto com números negativos e positivos e o difícil poderá
+                ter dois caminhos, as quatro operações junto com números negativos e positivos e números pares e impares
+                só que com cálculos mais "difíceis" ou as quatro operações com adição de potenciação e raiz quadrada,
+                no entanto o grupo irá analisar a disponibilidade de implementar potenciação e raiz
+                quadrada, visto que são operações matemáticas avançadas. Essa é a ideia que temos para o 
+                jogo Mathematical Master, o primeiro jogo. O Mathematical Master irá ser acompanhado de um Website
+                que irá conter postagens sobre o mundo da matématica, bem como terá novas perguntas para os estudantes
+                responderem, servindo como uma extensão do jogo.
+                </p>
+            </div>
         </div>
         <div class = 'memb' id = 'member'>
             <h2 class="border-top border-dark pt-4 pb-4">Equipe SchoolBag</h2>
             <div class="row">
                 {% for user in usuarios %}
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 border membro">
-                    <img src="{% static 'img/henrique.jfif' %}" class="img-fluid img-membro" alt="imagem do membro da equipe">
+                    {% if user.nome_user_ah == 'Antônio Henrique' %}
+                        <img src="{% static 'core/img/henrique.jfif' %}" class="img-fluid img-membro" alt="imagem do membro da equipe">
+                    {% endif %}
+                        
                     <h6 class="text-center mt-2">{{user.nome_user_ah}}</h6>
                     
                     <p class="info-text">{{user.descricao_user_ah}}</p>
